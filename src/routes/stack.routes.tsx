@@ -6,6 +6,9 @@ import { Welcome } from '../pages/Welcome';
 import { UserIdentification } from '../pages/UserIdentification';
 import { Confirmation } from '../pages/Confimation';
 import { PlantSelect } from '../pages/PlantSelect';
+import { PlantSave } from '../pages/PlantSave';
+import { MyPlants } from '../pages/MyPlants';
+import AuthRouttes from './tab.routes';
 
 const stackRoutes = createStackNavigator();
 
@@ -23,18 +26,32 @@ const AppRoutes: React.FC = () => (
     <stackRoutes.Screen
       name="UserIdentification"
       component={UserIdentification}
-      options={{ headerTitle: '' }}
+      options={{ headerTitle: '', headerShown: false }}
     />
     <stackRoutes.Screen
       name="Confirmation"
       component={Confirmation}
-      options={{ headerTitle: '' }}
+      options={{ headerTitle: '', headerShown: false }}
     />
 
     <stackRoutes.Screen
       name="PlantSelect"
-      component={PlantSelect}
+      component={AuthRouttes}
+      options={{ headerTitle: '', headerShown: false }}
     />
+
+    <stackRoutes.Screen
+      name="PlantSave"
+      component={PlantSave}
+      options={{ headerTitle: '', headerShown: false }}
+    />
+
+    <stackRoutes.Screen
+      name="MyPlants"
+      component={AuthRouttes}
+      options={{ headerTitle: '', headerShown: false }}
+    />
+
   </stackRoutes.Navigator>
 );
 
