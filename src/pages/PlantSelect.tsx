@@ -16,6 +16,11 @@ interface EnviromentProps {
     title: string
 }
 
+
+type Nav = {
+    navigate: (value: string, params: any) => void;
+};
+
 export function PlantSelect() {
     const [enviroments, setEnviroments] = useState<EnviromentProps[]>([])
     const [plants, setPlants] = useState<PlantProps[]>([])
@@ -26,7 +31,7 @@ export function PlantSelect() {
     const [page, setPage] = useState(1)
     const [loadingMore, setLoadingMore] = useState(false)
 
-    const navigation = useNavigation()
+    const navigation = useNavigation<Nav>()
 
     function handleEnviromentSelected(enviroment: string){
         setEnviromentSelected(enviroment)
@@ -108,7 +113,7 @@ export function PlantSelect() {
                 </Text>
             </View>
 
-            <View>
+            <View style={{marginLeft: 32}}>
                 <FlatList
                     horizontal
                     showsHorizontalScrollIndicator={false}
@@ -165,7 +170,8 @@ const styles = StyleSheet.create({
         height: 40,
         justifyContent: 'center',
         paddingBottom: 5,
-        marginLeft: 32,
+        // marginLeft: 32,
+        // marginRight:10
         marginVertical: 32
     },
     plants: {

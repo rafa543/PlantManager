@@ -96,7 +96,7 @@ export function PlantSave() {
                             value={selectedDateTime}
                             mode="time"
                             display='spinner'
-                            onChange={handleChangeTime}
+                            onChange={event => handleChangeTime}
                         />
                     )
                 }
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-between',
-        backgroundColor: colors.shape
+        // backgroundColor: colors.shape
     },
     plantInfo: {
         flex: 1,
